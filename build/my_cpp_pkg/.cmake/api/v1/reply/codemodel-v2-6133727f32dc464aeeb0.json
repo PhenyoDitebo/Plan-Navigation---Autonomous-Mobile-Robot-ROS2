@@ -1,0 +1,97 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-381dcc3444af6bdcfad9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "my_cpp_pkg",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "my_cpp_pkg_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-my_cpp_pkg_uninstall-5f4aff219ec1b2740b05.json",
+					"name" : "my_cpp_pkg_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "number_counter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-number_counter-4ae45a8cc7f0f37e5f57.json",
+					"name" : "number_counter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "number_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-number_publisher-5d2dc07d1e93abc6040e.json",
+					"name" : "number_publisher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_node-591672e60eb08139ed03.json",
+					"name" : "test_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-bed616acc53974ac3ac6.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pdite/ros2_ws/build/my_cpp_pkg",
+		"source" : "/home/pdite/ros2_ws/src/my_cpp_pkg"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

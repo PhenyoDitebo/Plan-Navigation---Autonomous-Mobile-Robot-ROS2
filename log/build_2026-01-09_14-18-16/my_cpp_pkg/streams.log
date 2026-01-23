@@ -1,0 +1,20 @@
+[0.070s] Invoking command in '/home/pdite/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[0.386s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.039s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.309s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.333s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.372s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.407s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.567s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.574s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.903s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.237s] -- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)
+[2.380s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[2.380s]   ament_target_dependencies() the first argument must be a valid target name
+[2.381s] Call Stack (most recent call first):
+[2.381s]   CMakeLists.txt:16 (ament_target_dependencies)
+[2.381s] 
+[2.381s] [0m
+[2.381s] -- Configuring incomplete, errors occurred!
+[2.395s] gmake: *** [Makefile:267: cmake_check_build_system] Error 1
+[2.400s] Invoked command in '/home/pdite/ros2_ws/build/my_cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16

@@ -1,0 +1,29 @@
+[0.023s] Invoking command in '/home/pdite/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[0.181s] [ 33%] Built target test_node
+[0.183s] [ 66%] Built target number_publisher
+[0.201s] [ 83%] [32mBuilding CXX object CMakeFiles/number_counter.dir/src/number_counter.cpp.o[0m
+[14.030s] [100%] [32m[1mLinking CXX executable number_counter[0m
+[14.656s] [100%] Built target number_counter
+[14.690s] Invoked command in '/home/pdite/ros2_ws/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[14.719s] Invoking command in '/home/pdite/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/pdite/ros2_ws/build/my_cpp_pkg
+[14.744s] -- Install configuration: ""
+[14.745s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/test_node
+[14.745s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_publisher
+[14.746s] -- Installing: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_counter
+[14.763s] -- Set non-toolchain portion of runtime path of "/home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_counter" to ""
+[14.764s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_pkg
+[14.764s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_pkg
+[14.765s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.sh
+[14.765s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.dsv
+[14.765s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.sh
+[14.765s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.dsv
+[14.766s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.bash
+[14.766s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.sh
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.zsh
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.dsv
+[14.767s] -- Installing: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/packages/my_cpp_pkg
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig.cmake
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig-version.cmake
+[14.767s] -- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.xml
+[14.772s] Invoked command in '/home/pdite/ros2_ws/build/my_cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --install /home/pdite/ros2_ws/build/my_cpp_pkg

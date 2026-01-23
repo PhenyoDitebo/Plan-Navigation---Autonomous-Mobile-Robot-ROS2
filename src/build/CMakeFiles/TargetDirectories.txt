@@ -1,0 +1,9 @@
+/home/pdite/ros2_ws/src/build/CMakeFiles/uninstall.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/my_cpp_pkg_uninstall.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/test.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/edit_cache.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/rebuild_cache.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/list_install_components.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/install.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/install/local.dir
+/home/pdite/ros2_ws/src/build/CMakeFiles/install/strip.dir

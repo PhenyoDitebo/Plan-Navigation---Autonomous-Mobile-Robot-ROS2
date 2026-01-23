@@ -1,0 +1,27 @@
+[0.031s] Invoking command in '/home/pdite/ros2_ws/build/my_cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16
+[0.113s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.548s] -- Found rclcpp: 28.1.13 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.741s] -- Found rosidl_generator_c: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.753s] -- Found rosidl_generator_cpp: 4.6.6 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.769s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.788s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.872s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.873s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.171s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.409s] -- Found example_interfaces: 0.12.0 (/opt/ros/jazzy/share/example_interfaces/cmake)
+[1.686s] -- Configuring done (1.6s)
+[1.763s] -- Generating done (0.1s)
+[1.779s] -- Build files have been written to: /home/pdite/ros2_ws/build/my_cpp_pkg
+[1.882s] [ 25%] [32mBuilding CXX object CMakeFiles/number_publisher.dir/src/number_publisher.cpp.o[0m
+[1.916s] [ 50%] [32mBuilding CXX object CMakeFiles/test_node.dir/src/my_first_node.cpp.o[0m
+[2.605s] [01m[K/home/pdite/ros2_ws/src/my_cpp_pkg/src/number_publisher.cpp:3:10:[m[K [01;31m[Kfatal error: [m[Kstd_msgs/msg/string.hpp: No such file or directory
+[2.605s]     3 | #include [01;31m[K"std_msgs/msg/string.hpp"[m[K
+[2.605s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[2.606s] compilation terminated.
+[2.619s] gmake[2]: *** [CMakeFiles/number_publisher.dir/build.make:76: CMakeFiles/number_publisher.dir/src/number_publisher.cpp.o] Error 1
+[2.620s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/number_publisher.dir/all] Error 2
+[2.620s] gmake[1]: *** Waiting for unfinished jobs....
+[8.135s] [ 75%] [32m[1mLinking CXX executable test_node[0m
+[8.667s] [ 75%] Built target test_node
+[8.672s] gmake: *** [Makefile:146: all] Error 2
+[8.678s] Invoked command in '/home/pdite/ros2_ws/build/my_cpp_pkg' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy /usr/bin/cmake --build /home/pdite/ros2_ws/build/my_cpp_pkg -- -j16 -l16

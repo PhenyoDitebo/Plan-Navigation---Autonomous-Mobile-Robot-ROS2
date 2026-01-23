@@ -1,0 +1,4 @@
+[01m[K/home/pdite/ros2_ws/src/my_cpp_pkg/src/number_counter.cpp:[m[K In member function ‘[01m[Kvoid NumberCounter::[01;32m[KcallbackNumber[m[K(example_interfaces::msg::Int64_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/pdite/ros2_ws/src/my_cpp_pkg/src/number_counter.cpp:22:77:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   22 |         void callbackNumber([01;35m[Kconst example_interfaces::msg::Int64::SharedPtr msg[m[K) {
+      |                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K

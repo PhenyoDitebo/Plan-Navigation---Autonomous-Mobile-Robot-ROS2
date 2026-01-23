@@ -1,0 +1,243 @@
+[0.000000] (-) TimerEvent: {}
+[0.001300] (my_cpp_pkg) JobQueued: {'identifier': 'my_cpp_pkg', 'dependencies': OrderedDict()}
+[0.001475] (my_py_pkg) JobQueued: {'identifier': 'my_py_pkg', 'dependencies': OrderedDict()}
+[0.001568] (my_cpp_pkg) JobStarted: {'identifier': 'my_cpp_pkg'}
+[0.026997] (my_py_pkg) JobStarted: {'identifier': 'my_py_pkg'}
+[0.047883] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'cmake'}
+[0.054507] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'build'}
+[0.055580] (my_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/pdite/ros2_ws/build/my_cpp_pkg', '--', '-j16', '-l16'], 'cwd': '/home/pdite/ros2_ws/build/my_cpp_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pdite', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_ASKPASS': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/pdite', 'TERM_PROGRAM_VERSION': '1.108.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-a25cd71c-6598-47e4-abe0-35c28d8ecf14.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-24.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/pdite/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pdite', 'NAME': 'PhenyoDitebo', 'WSL_INTEROP': '/run/WSL/470_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/bin/remote-cli:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/MATLAB/R2025b/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Git/bin:/snap/bin:/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-3df8f533dd6c463d.txt', 'LANG': 'en_US.UTF-8', 'PYTHONSTARTUP': '/home/pdite/.vscode-server/data/User/workspaceStorage/f8516d1a949277439d94c726632cabe9/ms-python.python/pythonrc.py', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-ca2af5ed41.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_py_pkg:/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/pdite/ros2_ws/build/my_cpp_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}), 'shell': False}
+[0.099494] (-) TimerEvent: {}
+[0.200466] (-) TimerEvent: {}
+[0.301360] (-) TimerEvent: {}
+[0.384934] (my_cpp_pkg) StdoutLine: {'line': b'[ 33%] Built target test_node\n'}
+[0.389898] (my_cpp_pkg) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/number_publisher.dir/src/number_publisher.cpp.o\x1b[0m\n'}
+[0.401280] (-) TimerEvent: {}
+[0.409866] (my_cpp_pkg) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/number_counter.dir/src/number_counter.cpp.o\x1b[0m\n'}
+[0.501449] (-) TimerEvent: {}
+[0.601917] (-) TimerEvent: {}
+[0.702420] (-) TimerEvent: {}
+[0.802920] (-) TimerEvent: {}
+[0.903355] (-) TimerEvent: {}
+[1.003950] (-) TimerEvent: {}
+[1.104472] (-) TimerEvent: {}
+[1.204914] (-) TimerEvent: {}
+[1.305480] (-) TimerEvent: {}
+[1.406005] (-) TimerEvent: {}
+[1.506468] (-) TimerEvent: {}
+[1.606852] (-) TimerEvent: {}
+[1.707230] (-) TimerEvent: {}
+[1.807739] (-) TimerEvent: {}
+[1.908563] (-) TimerEvent: {}
+[2.009094] (-) TimerEvent: {}
+[2.109614] (-) TimerEvent: {}
+[2.209987] (-) TimerEvent: {}
+[2.310462] (-) TimerEvent: {}
+[2.410876] (-) TimerEvent: {}
+[2.511304] (-) TimerEvent: {}
+[2.611771] (-) TimerEvent: {}
+[2.628602] (my_py_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/my_py_pkg', 'build', '--build-base', '/home/pdite/ros2_ws/build/my_py_pkg/build', 'install', '--record', '/home/pdite/ros2_ws/build/my_py_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/pdite/ros2_ws/src/my_py_pkg', 'env': {'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pdite', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_ASKPASS': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/pdite', 'TERM_PROGRAM_VERSION': '1.108.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-a25cd71c-6598-47e4-abe0-35c28d8ecf14.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-24.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/pdite/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pdite', 'NAME': 'PhenyoDitebo', 'WSL_INTEROP': '/run/WSL/470_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/bin/remote-cli:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/MATLAB/R2025b/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Git/bin:/snap/bin:/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-3df8f533dd6c463d.txt', 'LANG': 'en_US.UTF-8', 'PYTHONSTARTUP': '/home/pdite/.vscode-server/data/User/workspaceStorage/f8516d1a949277439d94c726632cabe9/ms-python.python/pythonrc.py', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-ca2af5ed41.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_py_pkg:/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/pdite/ros2_ws/build/my_py_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pdite/ros2_ws/build/my_py_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages:/home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[2.711916] (-) TimerEvent: {}
+[2.812384] (-) TimerEvent: {}
+[2.913014] (-) TimerEvent: {}
+[3.013482] (-) TimerEvent: {}
+[3.113883] (-) TimerEvent: {}
+[3.214295] (-) TimerEvent: {}
+[3.246227] (my_py_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[3.281248] (my_py_pkg) StdoutLine: {'line': b'writing ../../build/my_py_pkg/my_py_pkg.egg-info/PKG-INFO\n'}
+[3.282486] (my_py_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/my_py_pkg/my_py_pkg.egg-info/dependency_links.txt\n'}
+[3.283676] (my_py_pkg) StdoutLine: {'line': b'writing requirements to ../../build/my_py_pkg/my_py_pkg.egg-info/requires.txt\n'}
+[3.283930] (my_py_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/my_py_pkg/my_py_pkg.egg-info/top_level.txt\n'}
+[3.314491] (-) TimerEvent: {}
+[3.348663] (my_py_pkg) StdoutLine: {'line': b"reading manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[3.350231] (my_py_pkg) StdoutLine: {'line': b"writing manifest file '../../build/my_py_pkg/my_py_pkg.egg-info/SOURCES.txt'\n"}
+[3.351718] (my_py_pkg) StdoutLine: {'line': b'running build\n'}
+[3.351919] (my_py_pkg) StdoutLine: {'line': b'running build_py\n'}
+[3.352511] (my_py_pkg) StdoutLine: {'line': b'running install\n'}
+[3.362086] (my_py_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[3.405191] (my_py_pkg) StdoutLine: {'line': b'running install_data\n'}
+[3.405454] (my_py_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[3.414567] (-) TimerEvent: {}
+[3.447372] (my_py_pkg) StdoutLine: {'line': b"removing '/home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[3.449559] (my_py_pkg) StdoutLine: {'line': b'Copying ../../build/my_py_pkg/my_py_pkg.egg-info to /home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages/my_py_pkg-0.0.0-py3.12.egg-info\n'}
+[3.453155] (my_py_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[3.514743] (-) TimerEvent: {}
+[3.615221] (-) TimerEvent: {}
+[3.715707] (-) TimerEvent: {}
+[3.816169] (-) TimerEvent: {}
+[3.837244] (my_py_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/pdite/ros2_ws/build/my_py_pkg/install.log'\n"}
+[3.906952] (my_py_pkg) CommandEnded: {'returncode': 0}
+[3.916350] (-) TimerEvent: {}
+[3.948483] (my_py_pkg) JobEnded: {'identifier': 'my_py_pkg', 'rc': 0}
+[4.016538] (-) TimerEvent: {}
+[4.117033] (-) TimerEvent: {}
+[4.217465] (-) TimerEvent: {}
+[4.317860] (-) TimerEvent: {}
+[4.418252] (-) TimerEvent: {}
+[4.518718] (-) TimerEvent: {}
+[4.619109] (-) TimerEvent: {}
+[4.719562] (-) TimerEvent: {}
+[4.820119] (-) TimerEvent: {}
+[4.920538] (-) TimerEvent: {}
+[5.021173] (-) TimerEvent: {}
+[5.121806] (-) TimerEvent: {}
+[5.222322] (-) TimerEvent: {}
+[5.322849] (-) TimerEvent: {}
+[5.423416] (-) TimerEvent: {}
+[5.523903] (-) TimerEvent: {}
+[5.624653] (-) TimerEvent: {}
+[5.725270] (-) TimerEvent: {}
+[5.825789] (-) TimerEvent: {}
+[5.926303] (-) TimerEvent: {}
+[6.026773] (-) TimerEvent: {}
+[6.127335] (-) TimerEvent: {}
+[6.227823] (-) TimerEvent: {}
+[6.328244] (-) TimerEvent: {}
+[6.428641] (-) TimerEvent: {}
+[6.529099] (-) TimerEvent: {}
+[6.629532] (-) TimerEvent: {}
+[6.729967] (-) TimerEvent: {}
+[6.830311] (-) TimerEvent: {}
+[6.930724] (-) TimerEvent: {}
+[7.031201] (-) TimerEvent: {}
+[7.131743] (-) TimerEvent: {}
+[7.232224] (-) TimerEvent: {}
+[7.332796] (-) TimerEvent: {}
+[7.433348] (-) TimerEvent: {}
+[7.533784] (-) TimerEvent: {}
+[7.634187] (-) TimerEvent: {}
+[7.734600] (-) TimerEvent: {}
+[7.835099] (-) TimerEvent: {}
+[7.935540] (-) TimerEvent: {}
+[8.035992] (-) TimerEvent: {}
+[8.136564] (-) TimerEvent: {}
+[8.237149] (-) TimerEvent: {}
+[8.337766] (-) TimerEvent: {}
+[8.438289] (-) TimerEvent: {}
+[8.538807] (-) TimerEvent: {}
+[8.639256] (-) TimerEvent: {}
+[8.739655] (-) TimerEvent: {}
+[8.840122] (-) TimerEvent: {}
+[8.940628] (-) TimerEvent: {}
+[9.041178] (-) TimerEvent: {}
+[9.141573] (-) TimerEvent: {}
+[9.241950] (-) TimerEvent: {}
+[9.342432] (-) TimerEvent: {}
+[9.442858] (-) TimerEvent: {}
+[9.543337] (-) TimerEvent: {}
+[9.643837] (-) TimerEvent: {}
+[9.744256] (-) TimerEvent: {}
+[9.844652] (-) TimerEvent: {}
+[9.945109] (-) TimerEvent: {}
+[10.045526] (-) TimerEvent: {}
+[10.145973] (-) TimerEvent: {}
+[10.246390] (-) TimerEvent: {}
+[10.346844] (-) TimerEvent: {}
+[10.447213] (-) TimerEvent: {}
+[10.547627] (-) TimerEvent: {}
+[10.648046] (-) TimerEvent: {}
+[10.748454] (-) TimerEvent: {}
+[10.848890] (-) TimerEvent: {}
+[10.949552] (-) TimerEvent: {}
+[11.049946] (-) TimerEvent: {}
+[11.150368] (-) TimerEvent: {}
+[11.250850] (-) TimerEvent: {}
+[11.351414] (-) TimerEvent: {}
+[11.451835] (-) TimerEvent: {}
+[11.552264] (-) TimerEvent: {}
+[11.652622] (-) TimerEvent: {}
+[11.753080] (-) TimerEvent: {}
+[11.853529] (-) TimerEvent: {}
+[11.953953] (-) TimerEvent: {}
+[12.054339] (-) TimerEvent: {}
+[12.154750] (-) TimerEvent: {}
+[12.202331] (my_cpp_pkg) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking CXX executable number_publisher\x1b[0m\n'}
+[12.254933] (-) TimerEvent: {}
+[12.355391] (-) TimerEvent: {}
+[12.455827] (-) TimerEvent: {}
+[12.556266] (-) TimerEvent: {}
+[12.656680] (-) TimerEvent: {}
+[12.757168] (-) TimerEvent: {}
+[12.838965] (my_cpp_pkg) StdoutLine: {'line': b'[ 83%] Built target number_publisher\n'}
+[12.857326] (-) TimerEvent: {}
+[12.958100] (-) TimerEvent: {}
+[13.058727] (-) TimerEvent: {}
+[13.159118] (-) TimerEvent: {}
+[13.259527] (-) TimerEvent: {}
+[13.359981] (-) TimerEvent: {}
+[13.460407] (-) TimerEvent: {}
+[13.560913] (-) TimerEvent: {}
+[13.661391] (-) TimerEvent: {}
+[13.761779] (-) TimerEvent: {}
+[13.862244] (-) TimerEvent: {}
+[13.963167] (-) TimerEvent: {}
+[14.063644] (-) TimerEvent: {}
+[14.164164] (-) TimerEvent: {}
+[14.264637] (-) TimerEvent: {}
+[14.365132] (-) TimerEvent: {}
+[14.465597] (-) TimerEvent: {}
+[14.566018] (-) TimerEvent: {}
+[14.666460] (-) TimerEvent: {}
+[14.766916] (-) TimerEvent: {}
+[14.867451] (-) TimerEvent: {}
+[14.967924] (-) TimerEvent: {}
+[15.068380] (-) TimerEvent: {}
+[15.168874] (-) TimerEvent: {}
+[15.269374] (-) TimerEvent: {}
+[15.369768] (-) TimerEvent: {}
+[15.470158] (-) TimerEvent: {}
+[15.570523] (-) TimerEvent: {}
+[15.670894] (-) TimerEvent: {}
+[15.771363] (-) TimerEvent: {}
+[15.872025] (-) TimerEvent: {}
+[15.972636] (-) TimerEvent: {}
+[16.073182] (-) TimerEvent: {}
+[16.173590] (-) TimerEvent: {}
+[16.273988] (-) TimerEvent: {}
+[16.374339] (-) TimerEvent: {}
+[16.474720] (-) TimerEvent: {}
+[16.575170] (-) TimerEvent: {}
+[16.675646] (-) TimerEvent: {}
+[16.776139] (-) TimerEvent: {}
+[16.876662] (-) TimerEvent: {}
+[16.977151] (-) TimerEvent: {}
+[17.077631] (-) TimerEvent: {}
+[17.178066] (-) TimerEvent: {}
+[17.278482] (-) TimerEvent: {}
+[17.378863] (-) TimerEvent: {}
+[17.384748] (my_cpp_pkg) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable number_counter\x1b[0m\n'}
+[17.479009] (-) TimerEvent: {}
+[17.579532] (-) TimerEvent: {}
+[17.680180] (-) TimerEvent: {}
+[17.781066] (-) TimerEvent: {}
+[17.881477] (-) TimerEvent: {}
+[17.982156] (-) TimerEvent: {}
+[18.082572] (-) TimerEvent: {}
+[18.086420] (my_cpp_pkg) StdoutLine: {'line': b'[100%] Built target number_counter\n'}
+[18.121516] (my_cpp_pkg) CommandEnded: {'returncode': 0}
+[18.124953] (my_cpp_pkg) JobProgress: {'identifier': 'my_cpp_pkg', 'progress': 'install'}
+[18.153207] (my_cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/pdite/ros2_ws/build/my_cpp_pkg'], 'cwd': '/home/pdite/ros2_ws/build/my_cpp_pkg', 'env': OrderedDict({'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pdite', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'GIT_ASKPASS': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/pdite', 'TERM_PROGRAM_VERSION': '1.108.1', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-a25cd71c-6598-47e4-abe0-35c28d8ecf14.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-24.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/pdite/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pdite', 'NAME': 'PhenyoDitebo', 'WSL_INTEROP': '/run/WSL/470_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'PATH': '/home/pdite/.vscode-server/bin/585eba7c0c34fd6b30faac7c62a42050bfbc0086/bin/remote-cli:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/c/Program Files/MATLAB/R2025b/bin:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/:/mnt/c/Program Files/Git/bin:/snap/bin:/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/pdite/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-3df8f533dd6c463d.txt', 'LANG': 'en_US.UTF-8', 'PYTHONSTARTUP': '/home/pdite/.vscode-server/data/User/workspaceStorage/f8516d1a949277439d94c726632cabe9/ms-python.python/pythonrc.py', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-ca2af5ed41.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_py_pkg:/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/pdite/ros2_ws/build/my_cpp_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pdite/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/pdite/ros2_ws/install/my_cpp_pkg:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pdite/ros2_ws/install/my_py_pkg:/opt/ros/jazzy', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}), 'shell': False}
+[18.176676] (my_cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[18.180185] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/test_node\n'}
+[18.181926] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_publisher\n'}
+[18.182635] (-) TimerEvent: {}
+[18.186593] (my_cpp_pkg) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_publisher" to ""\n'}
+[18.188771] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_counter\n'}
+[18.204725] (my_cpp_pkg) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/pdite/ros2_ws/install/my_cpp_pkg/lib/my_cpp_pkg/number_counter" to ""\n'}
+[18.205262] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/package_run_dependencies/my_cpp_pkg\n'}
+[18.205679] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/parent_prefix_path/my_cpp_pkg\n'}
+[18.205899] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.sh\n'}
+[18.206192] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[18.206528] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.sh\n'}
+[18.206848] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/environment/path.dsv\n'}
+[18.207382] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.bash\n'}
+[18.207524] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.sh\n'}
+[18.207605] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.zsh\n'}
+[18.207673] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/local_setup.dsv\n'}
+[18.207737] (my_cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.dsv\n'}
+[18.208456] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/ament_index/resource_index/packages/my_cpp_pkg\n'}
+[18.208747] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig.cmake\n'}
+[18.209182] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/cmake/my_cpp_pkgConfig-version.cmake\n'}
+[18.209331] (my_cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/pdite/ros2_ws/install/my_cpp_pkg/share/my_cpp_pkg/package.xml\n'}
+[18.213828] (my_cpp_pkg) CommandEnded: {'returncode': 0}
+[18.243016] (my_cpp_pkg) JobEnded: {'identifier': 'my_cpp_pkg', 'rc': 0}
+[18.245995] (-) EventReactorShutdown: {}
