@@ -236,6 +236,19 @@ number_counter/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/number_counter.dir/build.make CMakeFiles/number_counter.dir/build
 .PHONY : number_counter/fast
 
+#=============================================================================
+# Target rules for targets named simple_lifecycle_node
+
+# Build rule for target.
+simple_lifecycle_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_lifecycle_node
+.PHONY : simple_lifecycle_node
+
+# fast build rule for target.
+simple_lifecycle_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_lifecycle_node.dir/build.make CMakeFiles/simple_lifecycle_node.dir/build
+.PHONY : simple_lifecycle_node/fast
+
 src/my_first_node.o: src/my_first_node.cpp.o
 .PHONY : src/my_first_node.o
 
@@ -308,6 +321,30 @@ src/number_publisher.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/number_publisher.dir/build.make CMakeFiles/number_publisher.dir/src/number_publisher.cpp.s
 .PHONY : src/number_publisher.cpp.s
 
+src/simple_lifecycle_node.o: src/simple_lifecycle_node.cpp.o
+.PHONY : src/simple_lifecycle_node.o
+
+# target to build an object file
+src/simple_lifecycle_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_lifecycle_node.dir/build.make CMakeFiles/simple_lifecycle_node.dir/src/simple_lifecycle_node.cpp.o
+.PHONY : src/simple_lifecycle_node.cpp.o
+
+src/simple_lifecycle_node.i: src/simple_lifecycle_node.cpp.i
+.PHONY : src/simple_lifecycle_node.i
+
+# target to preprocess a source file
+src/simple_lifecycle_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_lifecycle_node.dir/build.make CMakeFiles/simple_lifecycle_node.dir/src/simple_lifecycle_node.cpp.i
+.PHONY : src/simple_lifecycle_node.cpp.i
+
+src/simple_lifecycle_node.s: src/simple_lifecycle_node.cpp.s
+.PHONY : src/simple_lifecycle_node.s
+
+# target to generate assembly for a file
+src/simple_lifecycle_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_lifecycle_node.dir/build.make CMakeFiles/simple_lifecycle_node.dir/src/simple_lifecycle_node.cpp.s
+.PHONY : src/simple_lifecycle_node.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -325,6 +362,7 @@ help:
 	@echo "... uninstall"
 	@echo "... number_counter"
 	@echo "... number_publisher"
+	@echo "... simple_lifecycle_node"
 	@echo "... test_node"
 	@echo "... src/my_first_node.o"
 	@echo "... src/my_first_node.i"
@@ -335,6 +373,9 @@ help:
 	@echo "... src/number_publisher.o"
 	@echo "... src/number_publisher.i"
 	@echo "... src/number_publisher.s"
+	@echo "... src/simple_lifecycle_node.o"
+	@echo "... src/simple_lifecycle_node.i"
+	@echo "... src/simple_lifecycle_node.s"
 .PHONY : help
 
 

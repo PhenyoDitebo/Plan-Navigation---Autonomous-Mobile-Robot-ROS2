@@ -274,7 +274,7 @@ SITE:STRING=PhenyoDitebo
 TinyXML2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/tinyxml2
 
 //Path to a library.
-_lib:FILEPATH=/opt/ros/jazzy/lib/libexample_interfaces__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/opt/ros/jazzy/lib/librcl_lifecycle.so
 
 //The directory containing a CMake configuration file for action_msgs.
 action_msgs_DIR:PATH=/opt/ros/jazzy/share/action_msgs/cmake
@@ -351,6 +351,9 @@ foonathan_memory_DIR:PATH=/opt/ros/jazzy/lib/foonathan_memory/cmake
 //The directory containing a CMake configuration file for libstatistics_collector.
 libstatistics_collector_DIR:PATH=/opt/ros/jazzy/share/libstatistics_collector/cmake
 
+//The directory containing a CMake configuration file for lifecycle_msgs.
+lifecycle_msgs_DIR:PATH=/opt/ros/jazzy/share/lifecycle_msgs/cmake
+
 //Value Computed by CMake
 my_cpp_pkg_BINARY_DIR:STATIC=/home/pdite/ros2_ws/build
 
@@ -372,6 +375,9 @@ rcl_DIR:PATH=/opt/ros/jazzy/share/rcl/cmake
 //The directory containing a CMake configuration file for rcl_interfaces.
 rcl_interfaces_DIR:PATH=/opt/ros/jazzy/share/rcl_interfaces/cmake
 
+//The directory containing a CMake configuration file for rcl_lifecycle.
+rcl_lifecycle_DIR:PATH=/opt/ros/jazzy/share/rcl_lifecycle/cmake
+
 //The directory containing a CMake configuration file for rcl_logging_interface.
 rcl_logging_interface_DIR:PATH=/opt/ros/jazzy/share/rcl_logging_interface/cmake
 
@@ -380,6 +386,9 @@ rcl_yaml_param_parser_DIR:PATH=/opt/ros/jazzy/share/rcl_yaml_param_parser/cmake
 
 //The directory containing a CMake configuration file for rclcpp.
 rclcpp_DIR:PATH=/opt/ros/jazzy/share/rclcpp/cmake
+
+//The directory containing a CMake configuration file for rclcpp_lifecycle.
+rclcpp_lifecycle_DIR:PATH=/opt/ros/jazzy/share/rclcpp_lifecycle/cmake
 
 //The directory containing a CMake configuration file for rcpputils.
 rcpputils_DIR:PATH=/opt/ros/jazzy/share/rcpputils/cmake

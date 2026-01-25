@@ -3,6 +3,7 @@
 /home/pdite/ros2_ws/build/CMakeFiles/test_node.dir
 /home/pdite/ros2_ws/build/CMakeFiles/number_publisher.dir
 /home/pdite/ros2_ws/build/CMakeFiles/number_counter.dir
+/home/pdite/ros2_ws/build/CMakeFiles/simple_lifecycle_node.dir
 /home/pdite/ros2_ws/build/CMakeFiles/test.dir
 /home/pdite/ros2_ws/build/CMakeFiles/edit_cache.dir
 /home/pdite/ros2_ws/build/CMakeFiles/rebuild_cache.dir

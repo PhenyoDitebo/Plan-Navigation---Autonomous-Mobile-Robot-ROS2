@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 
 add_executable(test_node src/my_first_node.cpp)
 ament_target_dependencies(test_node rclcpp)
@@ -20,11 +21,15 @@ ament_target_dependencies(number_publisher rclcpp example_interfaces std_msgs)
 add_executable(number_counter src src/number_counter.cpp)
 ament_target_dependencies(number_counter rclcpp example_interfaces)
 
+add_executable(simple_lifecycle_node src src/simple_lifecycle_node.cpp)
+ament_target_dependencies(simple_lifecycle_node rclcpp rclcpp_lifecycle std_msgs)
+
 
 install (TARGETS
   test_node
   number_publisher
   number_counter
+  simple_lifecycle_node
   DESTINATION lib/${PROJECT_NAME}/
 )
 
