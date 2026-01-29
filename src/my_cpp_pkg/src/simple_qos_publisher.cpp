@@ -12,7 +12,7 @@ using namespace std::chrono_literals;
 
 class simpleqospublisher : public rclcpp::Node { // create a class derived from rclcpp::Node, inherting its properties
     public:
-        simpleqospublisher() : Node("simple_qos_publisher"), qos_profile_pub_(10), counter_(0) // constructor
+        simpleqospublisher() : Node("simple_qos_publisher"),  counter_(0), qos_profile_pub_(10) // constructor
 
         // Remember QoS Policies. We apply them here for node communication.
         // I think nodes use all 8 QoS policies during communication.
