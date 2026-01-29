@@ -59,7 +59,7 @@ class simpleqospublisher : public rclcpp::Node { // create a class derived from 
                 return;
             }
 
-            pub_ = this->create_publisher<std_msgs::msg::String>("chatter", 10); // create publisher object, defining topic name and queue size
+            pub_ = this->create_publisher<std_msgs::msg::String>("chatter", qos_profile_pub_); // create publisher object, defining topic name and queue size
             timer_ = create_wall_timer(1s, std::bind(&simpleqospublisher::timerCallback, this)); // create a timer to trigger periodic callbacks every second
 
             RCLCPP_INFO(get_logger(), "Publishing at 1Hz"); // log info message to indicate publishing rate
@@ -68,7 +68,7 @@ class simpleqospublisher : public rclcpp::Node { // create a class derived from 
         unsigned int counter_; // counter variable to keep track of number of messages published
         rclcpp::Publisher<std_msgs::msg::String>::SharedPtr pub_; // publisher object, with its own type definition, smart pointer --> cleans up memeory automatically
         rclcpp::TimerBase::SharedPtr timer_; // timer object to trigger periodic callbacks
-        rclcpp::QoS qos_profile_pub_;
+        rclcpp::QoS qos_profile_pub_; // complete rule book on how the messages are handled. Use my custom settings for QoS set. 
 
         void timerCallback() { // callback function triggered by the timer
             auto message = std_msgs::msg::String(); // create a new string message object, auto keyword deduces the type automatically by compiler
