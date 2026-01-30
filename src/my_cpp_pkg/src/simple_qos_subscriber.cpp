@@ -8,6 +8,7 @@ class SimpleQoSSubscriber : public rclcpp::Node
     public:
         SimpleQoSSubscriber() : Node("simple_subscriber"), qos_profile_sub_(10) // constructor 
         {
+            // ------- HUMAN INTERFACE --------
             declare_parameter<std::string>("reliability", "system_default");
             declare_parameter<std::string>("durability", "system_default");
 
