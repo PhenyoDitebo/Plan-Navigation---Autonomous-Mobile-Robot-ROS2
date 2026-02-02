@@ -21,7 +21,7 @@ namespace bumperbot_planning {
         // going to use these publishers to visualise the results of the DJ planner in RViz.
         // and also to share them with other nodes that wanna use the path planned by the Dijkstra algo.
         rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_; //publish the path
-        rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr map_pub_; // will publish the map (occupany grid) containing the cells that the algo has visited so we can see whoch cells have been explored in map
+        rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr map_pub_; // will publish the map (occupany grid) containing the cells that the algo has visited so we can see which cells have been explored in map
 
         nav_msgs::msg::OccupancyGrid::SharedPtr map_; //shared pointer to the map currently in use to plan a path from the starting point to the destination.
         nav_msgs::msg::OccupancyGrid visited_map_; // we will use to contain the visited map
@@ -31,7 +31,7 @@ namespace bumperbot_planning {
 
         // ---------- FUNCTIONS ----------
         void mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map); // will be called when the map topic receives a message -- when it receives the map of the env
-        void goalCallback(const geometry_msgs::msg::PoseStamped::SharedPtr pose); // will be called whenever a message is recieved by the positiion subscriber. (??)
+        void goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose); // will be called whenever a message is recieved by the positiion subscriber. (??)
 
         nav_msgs::msg::Path plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal); //used to plan a path. Will take the starting position and the goal position
 };
