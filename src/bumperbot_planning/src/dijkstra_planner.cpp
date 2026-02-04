@@ -1,3 +1,5 @@
+#include <queue>
+
 #include "bumperbot_planning/dijkstra_planner.hpp"
 #include "rmw/qos_profiles.h"
 #include "geometry_msgs/msg/transform_stamped.hpp"
@@ -67,6 +69,20 @@ namespace bumperbot_planning {
 
         // this is the CORE of our planner. It's what will implement the Dijkstra algorithm to calc the plan using the map using start pos and goal position
         nav_msgs::msg::Path DijkstraPlanner::plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal) {
+            // will use to indicate what it's node neighbors are to be added to priority queue. Each cell should have only 4 neighbours (+)
+            std::vector<std::pair<int, int>> explore_directions = {
+                {-1,0}, {1,0}, {0,-1}, {0,1} // down, up, left, right.
+            };
+
+            // remember, the dijkstra algo is basically a priority queue that uses weight/costs to see which node to visit next
+            std::priority_queue<GraphNode, std::vector<GraphNode>, std::greater<GraphNode>> pending_nodes; // will keep track of the nodes we are yet to visit. Will store in a vector of graph nodes. The greater part is for comparison.
+            std::vector<GraphNode> visited_nodes; // used to store the list of the graph nodes that have already been visited by the algo to avoid double visits.  
+        }
+
+        // before starting exploration, we need to make a small conversion.
+        // start and end(goal) position are expressed with reference/respect to the map frame.
+        // before using the start and end (goal) nodes, we need to convert them to co-ordinates of the grid. Co-ordinates that rep a certain point in the occupancy grid that we are using the planning.
+        GraphNode worldtoGrid(const geometry_msgs::msg::Pose &pose) {
 
         }
 }
