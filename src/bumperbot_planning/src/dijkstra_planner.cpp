@@ -21,7 +21,7 @@ namespace bumperbot_planning {
 
         //Publishers
         path_pub_ = create_publisher<nav_msgs::msg::Path>("/dijkstra/path", 10);
-        map_pub_ = create_publisher<nav_msgs::msg::OccupancyGrid>("/dijkstra/visited_map", 10);
+        map_pub_ = create_publisher<nav_msgs::msg::OccupancyGrid>("/dijkstra/visited_map", map_qos); // need to match the QoS durability policy with map_sub_
     }
 
     void DijkstraPlanner::mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map) { // used whenever we receive a new occupancy grid on the map topic

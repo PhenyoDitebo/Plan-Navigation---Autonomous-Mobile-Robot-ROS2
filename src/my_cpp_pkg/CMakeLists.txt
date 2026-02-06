@@ -11,6 +11,11 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+include_directories(include)
 
 add_executable(test_node src/my_first_node.cpp)
 ament_target_dependencies(test_node rclcpp)

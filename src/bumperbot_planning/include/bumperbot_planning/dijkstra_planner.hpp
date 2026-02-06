@@ -47,16 +47,17 @@ namespace bumperbot_planning {
         DijkstraPlanner();
 
     private:
-        rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr map_sub_; // will receieve the map of the env that the planner is going to use for planning.
-        rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr pose_sub_; // will receive the destination of the planner.
+        rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr map_sub_; // Subscriber that receives the environment's occupancy grid map (/map topic).
+        rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr pose_sub_; // Subscriber that receives the goal pose (position) for path planning (/goal_pose topic)..
 
         // going to use these publishers to visualise the results of the DJ planner in RViz.
         // and also to share them with other nodes that wanna use the path planned by the Dijkstra algo.
-        rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_; //publish the path
-        rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr map_pub_; // will publish the map (occupany grid) containing the cells that the algo has visited so we can see which cells have been explored in map
 
-        nav_msgs::msg::OccupancyGrid::SharedPtr map_; //shared pointer to the map currently in use to plan a path from the starting point to the destination.
-        nav_msgs::msg::OccupancyGrid visited_map_; // we will use to contain the visited map
+        rclcpp::Publisher<nav_msgs::msg::Path>::SharedPtr path_pub_; // Publisher for the calculated path from start to goal (/dijkstra/path topic).
+        rclcpp::Publisher<nav_msgs::msg::OccupancyGrid>::SharedPtr map_pub_; // Publisher for the visualization of explored cells during the search (/dijkstra/visited_map topic).
+
+        nav_msgs::msg::OccupancyGrid::SharedPtr map_; // Shared pointer to the current static occupancy grid map used for planning decisions.
+        nav_msgs::msg::OccupancyGrid visited_map_; // Local copy of the occupancy grid used to track and visualize visited cells during the algorithm search.
 
         std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
         std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
