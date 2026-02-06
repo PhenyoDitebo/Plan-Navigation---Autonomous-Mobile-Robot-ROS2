@@ -46,7 +46,7 @@ namespace bumperbot_planning {
             return;
         } 
 
-        // ------------- TYPE CONVERSION -------------
+        // ------------------------------------------------------- TYPE CONVERSION ---------------------------------------------------------------------
         // Takes the spatial data from the transform object and packs it into the Pose (position) object.
         // We do this because the transform and position objects use different data structures. (??)
         geometry_msgs::msg::Pose map_to_base_pose;
@@ -66,6 +66,8 @@ namespace bumperbot_planning {
         }
 
     } 
+
+    // ------------------------------------------------------ FUNCTIONS, DEFINED ----------------------------------------------------------------
 
         // this is the CORE of our planner. It's what will implement the Dijkstra algorithm to calc the plan using the map using start pos and goal position
         nav_msgs::msg::Path DijkstraPlanner::plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal) {
@@ -110,8 +112,27 @@ namespace bumperbot_planning {
                     } 
                 }
 
-                visited_map_.data.at(poseToCell(active_node)); // this is an occupancy grid
+                visited_map_.data.at(poseToCell(active_node)) = 10; // this is an occupancy grid, want to mark neighours of node as visited and to also visualize in RViz
+                                                                    // 10 has no real meaning. Just offers a nice visualisation. Blue colour...?
+                map_pub_ -> publish(visited_map_); // this will publish the map.
             }
+
+            nav_msgs::msg::Path path; // this is what we will return and publish in the path topic.
+            path.header.frame_id = map_ ->header.frame_id; // use map's origin as (0,0) for the path, since its drawn on the map.
+
+            // path reconstruction (breadcrumb). Since Dijkstra only knows how to find the cheapest way to get there, and doesn't remember how to exactly get there.
+            while (active_node.prev && rclcpp::ok()) { // is current node a parent? As in, the code will still keep running until the trail back stops, that is, when we have reached the root, which has no parent.
+                geometry_msgs::msg::Pose last_pose = gridToWorld(active_node);
+                geometry_msgs::msg::PoseStamped last_pose_stamped;
+                last_pose_stamped.header.frame_id = map_->header.frame_id;
+                last_pose_stamped.pose = last_pose;
+
+                path.poses.push_back(last_pose_stamped); // adding the breadcrumb to the trail. Pushes the prev node/step into the back od the array. Will reverse.
+                active_node = *active_node.prev; // to help with the cycling of the while loop, until we get to the root.
+            }
+
+            // Reversing the breadcrumb trail we made.
+            std::reverse(path.poses.begin(), path.poses.end());
         }
 
         // before starting exploration, we need to make a small conversion.
@@ -137,6 +158,15 @@ namespace bumperbot_planning {
         // locker number function. Tells computer where to look for the node in the 1D array of the map.
          unsigned int DijkstraPlanner::poseToCell(const GraphNode &node) { // will convert the y and x co-ordinate into a simple index to access a specific cell of the data vector
             return node.y * map_->info.width + node.x; // this will get us to the index where the co-ordinate is actually stored.
+         }
+
+
+         // this will convert pixels to meters. From pixels on the robot map to points on the 'real' map with meters.
+         geometry_msgs::msg::Pose DijkstraPlanner::gridToWorld(const GraphNode &node) {
+            geometry_msgs::msg::Pose pose;
+            pose.position.x = node.x * map_->info.resolution + map_->info.origin.position.x; // Convert X: (Pixel * Meters/Pixel) + Map Start Position
+            pose.position.y = node.y * map_->info.resolution + map_->info.origin.position.y; // Convert Y: (Pixel * Meters/Pixel) + Map Start Position
+            return pose;
          }
 }
 
