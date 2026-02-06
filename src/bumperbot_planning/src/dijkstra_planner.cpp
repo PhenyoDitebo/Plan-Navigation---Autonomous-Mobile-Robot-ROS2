@@ -17,7 +17,7 @@ namespace bumperbot_planning {
 
         // Subscribers
         map_sub_ = create_subscription<nav_msgs::msg::OccupancyGrid>("/map", map_qos, std::bind(&DijkstraPlanner::mapCallBack, this, std::placeholders::_1));
-        pose_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>("/goal_pose", 10, std::bind(& DijkstraPlanner::goalCallBack, std::placeholders::_1));
+        pose_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>("/goal_pose", 10, std::bind(& DijkstraPlanner::goalCallBack, this, std::placeholders::_1));
 
         //Publishers
         path_pub_ = create_publisher<nav_msgs::msg::Path>("/dijkstra/path", 10);
@@ -133,6 +133,7 @@ namespace bumperbot_planning {
 
             // Reversing the breadcrumb trail we made.
             std::reverse(path.poses.begin(), path.poses.end());
+            return path;
         }
 
         // before starting exploration, we need to make a small conversion.
