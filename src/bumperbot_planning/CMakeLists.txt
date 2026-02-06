@@ -23,7 +23,7 @@ ament_target_dependencies(dijkstra_planner rclcpp nav_msgs geometry_msgs tf2_ros
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-ament_python_install_package(${PROJECT_NAME})
+# ament_python_install_package(${PROJECT_NAME})
 
 install(
   DIRECTORY include 
