@@ -5,7 +5,7 @@
 #include "geometry_msgs/msg/transform_stamped.hpp"
 
 namespace bumperbot_planning {
-    DijkstraPlanner:: DijkstraPlanner(): Node("dijkstra_node") { // constructor
+    AStarPlanner:: AStarPlanner(): Node("dijkstra_node") { // constructor
         tf_buffer_ = std::make_unique<tf2_ros::Buffer>(get_clock());// will allow us to retrieve the current position of robot on the map
         tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
 
@@ -16,21 +16,21 @@ namespace bumperbot_planning {
         // initialise the ROS2 Interface of Publishers and subscribers
 
         // Subscribers
-        map_sub_ = create_subscription<nav_msgs::msg::OccupancyGrid>("/map", map_qos, std::bind(&DijkstraPlanner::mapCallBack, this, std::placeholders::_1));
-        pose_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>("/goal_pose", 10, std::bind(& DijkstraPlanner::goalCallBack, this, std::placeholders::_1));
+        map_sub_ = create_subscription<nav_msgs::msg::OccupancyGrid>("/map", map_qos, std::bind(&AStarPlanner::mapCallBack, this, std::placeholders::_1));
+        pose_sub_ = create_subscription<geometry_msgs::msg::PoseStamped>("/goal_pose", 10, std::bind(& AStarPlanner::goalCallBack, this, std::placeholders::_1));
 
         //Publishers
         path_pub_ = create_publisher<nav_msgs::msg::Path>("/dijkstra/path", 10);
         map_pub_ = create_publisher<nav_msgs::msg::OccupancyGrid>("/dijkstra/visited_map", map_qos); // need to match the QoS durability policy with map_sub_
     }
 
-    void DijkstraPlanner::mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map) { // used whenever we receive a new occupancy grid on the map topic
+    void AStarPlanner::mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map) { // used whenever we receive a new occupancy grid on the map topic
         map_ = map;
         visited_map_.header.frame_id = map->header.frame_id;
         visited_map_.info = map->info;
         visited_map_.data = std::vector<int8_t>(visited_map_.info.height * visited_map_.info.width, -1);
     }
-    void DijkstraPlanner::goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose) { // excecuted whenever we recieve a new goal.
+    void AStarPlanner::goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose) { // excecuted whenever we recieve a new goal.
         if (!map_) {
             RCLCPP_ERROR(get_logger(), "No map received!");
             return;
@@ -70,7 +70,7 @@ namespace bumperbot_planning {
     // ------------------------------------------------------ FUNCTIONS, DEFINED ----------------------------------------------------------------
 
         // this is the CORE of our planner. It's what will implement the Dijkstra algorithm to calc the plan using the map using start pos and goal position
-        nav_msgs::msg::Path DijkstraPlanner::plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal) {
+        nav_msgs::msg::Path AStarPlanner::plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal) {
             // will use to indicate what it's node neighbors are to be added to priority queue. Each cell should have only 4 neighbours (+)
             std::vector<std::pair<int, int>> explore_directions = {
                 {-1,0}, {1,0}, {0,-1}, {0,1} // down, up, left, right.
@@ -139,7 +139,7 @@ namespace bumperbot_planning {
         // before starting exploration, we need to make a small conversion.
         // start and end(goal) position are expressed with reference/respect to the map frame.
         // before using the start and end (goal) nodes, we need to convert them to co-ordinates of the grid. Co-ordinates that rep a certain point in the occupancy grid that we are using the planning.
-        GraphNode DijkstraPlanner::worldtoGrid(const geometry_msgs::msg::Pose &pose) { // pose is a reference to the robot's position in the real world (meters??)
+        GraphNode AStarPlanner::worldtoGrid(const geometry_msgs::msg::Pose &pose) { // pose is a reference to the robot's position in the real world (meters??)
 
             // create a new graph node whose co-ordinates are corresponding to a certain position in the map.
             int grid_x = static_cast<int>((pose.position.x - map_->info.origin.position.x)/ map_->info.resolution);
@@ -150,20 +150,20 @@ namespace bumperbot_planning {
         };
 
         // is the position on the map? as in, does it exist in the grid, or is itt out of scope? This function will check that.
-         bool DijkstraPlanner::poseOnMap (const GraphNode &node) {
+         bool AStarPlanner::poseOnMap (const GraphNode &node) {
             return node.x >= 0 && node.x < static_cast<int>(map_->info.width) // is the node's x co-ordinate bigger than 0 and smaller than the width of the map?
                 && node.y >= 0 && node.y < static_cast<int>(map_->info.height); // is the node's y co-ordinate bigger than 0 and smaller than the height of the map?
 
          }
 
         // locker number function. Tells computer where to look for the node in the 1D array of the map.
-         unsigned int DijkstraPlanner::poseToCell(const GraphNode &node) { // will convert the y and x co-ordinate into a simple index to access a specific cell of the data vector
+         unsigned int AStarPlanner::poseToCell(const GraphNode &node) { // will convert the y and x co-ordinate into a simple index to access a specific cell of the data vector
             return node.y * map_->info.width + node.x; // this will get us to the index where the co-ordinate is actually stored.
          }
 
 
          // this will convert pixels to meters. From pixels on the robot map to points on the 'real' map with meters.
-         geometry_msgs::msg::Pose DijkstraPlanner::gridToWorld(const GraphNode &node) {
+         geometry_msgs::msg::Pose AStarPlanner::gridToWorld(const GraphNode &node) {
             geometry_msgs::msg::Pose pose;
             pose.position.x = node.x * map_->info.resolution + map_->info.origin.position.x; // Convert X: (Pixel * Meters/Pixel) + Map Start Position
             pose.position.y = node.y * map_->info.resolution + map_->info.origin.position.y; // Convert Y: (Pixel * Meters/Pixel) + Map Start Position
@@ -173,7 +173,7 @@ namespace bumperbot_planning {
 
 int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<bumperbot_planning::DijkstraPlanner>();
+    auto node = std::make_shared<bumperbot_planning::AStarPlanner>();
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
