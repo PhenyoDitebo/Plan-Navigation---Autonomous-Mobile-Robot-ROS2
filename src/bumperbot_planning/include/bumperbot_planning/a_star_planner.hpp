@@ -41,10 +41,10 @@ namespace bumperbot_planning {
             return res; // return result.
         }
     };
-    class AStarPlanner : public rclcpp::Node
+    class DijkstraPlanner : public rclcpp::Node
 {
     public:
-        AStarPlanner();
+        DijkstraPlanner();
 
     private:
         rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr map_sub_; // Subscriber that receives the environment's occupancy grid map (/map topic).
@@ -76,4 +76,4 @@ namespace bumperbot_planning {
 };
 
 }
-
+// just to check smth
