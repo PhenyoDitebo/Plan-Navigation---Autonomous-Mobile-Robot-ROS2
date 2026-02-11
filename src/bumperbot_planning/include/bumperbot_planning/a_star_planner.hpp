@@ -17,6 +17,7 @@ namespace bumperbot_planning {
         int x;
         int y;
         int cost; // cost of travel to the next node.
+        double heuristic;
         std::shared_ptr<GraphNode>prev; // pointer to their parent node.
 
         // constructor
@@ -28,9 +29,9 @@ namespace bumperbot_planning {
         GraphNode() :GraphNode(0,0) {}
 
 
-        // overloading the operators.
+        // overloading the operators. This is what makes the priority queue work.
         bool operator>(const GraphNode &other) const { // "other" is the other node we are comparing to.
-            return cost > other.cost;
+            return cost + heuristic > other.cost + other.heuristic;
         }
         bool operator==(const GraphNode &other) const {
             return x == other.x && y == other.y;
@@ -41,10 +42,10 @@ namespace bumperbot_planning {
             return res; // return result.
         }
     };
-    class DijkstraPlanner : public rclcpp::Node
+    class AStarPlanner : public rclcpp::Node
 {
     public:
-        DijkstraPlanner();
+        AStarPlanner();
 
     private:
         rclcpp::Subscription<nav_msgs::msg::OccupancyGrid>::SharedPtr map_sub_; // Subscriber that receives the environment's occupancy grid map (/map topic).
@@ -71,6 +72,8 @@ namespace bumperbot_planning {
         GraphNode worldtoGrid(const geometry_msgs::msg::Pose &pose); // returns a graph node object whose co-ordinates respond to a position in the occupancy grid.
         bool poseOnMap (const GraphNode &node); // is position on Map? This function will be used to test that.
         unsigned int poseToCell(const GraphNode &node); // converts a 2D co-ordinate (e.g. Row 5, Col 10) into a single array (510)
+
+        double manhattanDistance(const GraphNode &node, const GraphNode &goal_node); // this function is meant to calculate the estimated distance between selected node and goal node
 
         nav_msgs::msg::Path plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal); //used to plan a path. Will take the starting position and the goal position.
 };
