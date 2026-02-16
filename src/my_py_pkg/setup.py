@@ -16,7 +16,7 @@ setup(
     maintainer='pdite',
     maintainer_email='pdite@todo.todo',
     description='TODO: Package description',
-    license='TODO: License declaration',
+    license='Apache-2.0',
     extras_require={
         'test': [
             'pytest',
