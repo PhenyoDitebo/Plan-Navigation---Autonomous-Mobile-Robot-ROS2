@@ -23,7 +23,23 @@ namespace bumperbot_motion { // we use namespace to avoid "name collisions."
             std::shared_ptr<tf2_ros::Buffer> tf_buffer_;
             std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
 
+        // -------------------------- we will use these during calculation of PD -------------------------------
+            double kp_;
+            double kd_;
+            double step_size_;
+            double max_linear_velocity_;
+            double max_angular_velocity_;
+
+            nav_msgs::msg::Path global_plan_; // whenever we get a new message in the subscriber, this variable will store it.
+
             // we need a control loop function to constantly (at a certain frequency) to check on the position
             // on the path that the robot has to reach.
+            rclcpp::TimerBase::SharedPtr control_loop_;
+
+        // --------------------------------------- FUNCTIONS -----------------------------------------
+        void controlLoop();
+        void pathCallback(const nav_msgs::msg::Path::SharedPtr path);
+
+
     };
 }
