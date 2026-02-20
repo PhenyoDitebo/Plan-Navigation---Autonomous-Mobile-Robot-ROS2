@@ -1,4 +1,5 @@
 #include "bumperbot_motion/pd_motion_planner.hpp"
+#include "geometry_msgs/msg/transform_stamped.hpp"
 
 // ------------------------------------- CONSTRUCTOR -------------------------------------------
 namespace bumperbot_motion {
@@ -37,11 +38,31 @@ namespace bumperbot_motion {
 
         // ------------------------------- CONTROL LOOP LOGIC -----------------------------------
         control_loop_ = create_wall_timer(std::chrono::milliseconds(100), std::bind(&PDMotionPlanner::controlLoop, this));
+        // run the control loop every 100ms.
     }
 
     // ------------------------------------ FUNCTION DECLARATION -----------------------------------
     void PDMotionPlanner::pathCallback(const nav_msgs::msg::Path::SharedPtr path) {
         global_plan_ = *path;
+    }
+
+    void PDMotionPlanner::controlLoop() {
+        if (global_plan_.poses.empty()) { // if we have no path, no need to do anything.
+        }
+
+        geometry_msgs::msg::TransformStamped robot_pose;
+        
+        try {
+            robot_pose = tf_buffer_ -> lookupTransform("odom", "base_footprint", tf2::TimePointZero); //odom - odometry frame
+        } 
+        catch(tf2::TransformException &ex) {
+            RCLCPP_WARN(get_logger(), "Could not transform: %s", ex.what());
+            return;
+        }
+
+        RCLCPP_INFO(get_logger(), "frame_id Robot Pose: %s", robot_pose.header.frame_id.c_str());
+
+
     }
 
 }
