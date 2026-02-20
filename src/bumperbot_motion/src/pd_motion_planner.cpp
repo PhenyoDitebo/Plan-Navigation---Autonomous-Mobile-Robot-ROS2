@@ -1,5 +1,6 @@
 #include "bumperbot_motion/pd_motion_planner.hpp"
 
+// ------------------------------------- CONSTRUCTOR -------------------------------------------
 namespace bumperbot_motion {
     PDMotionPlanner::PDMotionPlanner(): Node("pd_motion_planner_node"), 
     kp_(2.0), kd_(0.1), step_size_(0.2), max_linear_velocity_(0.3), max_angular_velocity_(1.0) {
@@ -12,7 +13,7 @@ namespace bumperbot_motion {
         declare_parameter<double>("max_linear_velocity", max_linear_velocity_);
         declare_parameter<double>("max_angular_velocity", max_angular_velocity_);
 
-        // -------------------------- SAVING DATA INTO THE PARAMETERS -------------------------
+        // -------------------------- SAVING DATA INTO THE PARAMETERS -----------------------------
 
         kp_ = get_parameter("kp").as_double();
         kd_ = get_parameter("kd").as_double();
@@ -33,6 +34,14 @@ namespace bumperbot_motion {
 
         tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
         RCLCPP_INFO(this->get_logger(), "tf listener created");
-        
+
+        // ------------------------------- CONTROL LOOP LOGIC -----------------------------------
+        control_loop_ = create_wall_timer(std::chrono::milliseconds(100), std::bind(&PDMotionPlanner::controlLoop, this));
     }
+
+    // ------------------------------------ FUNCTION DECLARATION -----------------------------------
+    void PDMotionPlanner::pathCallback(const nav_msgs::msg::Path::SharedPtr path) {
+        global_plan_ = *path;
+    }
+
 }
