@@ -19,6 +19,20 @@ namespace bumperbot_motion {
         step_size_ = get_parameter("step_size").as_double();
         max_linear_velocity_ = get_parameter("max_linear_velocity").as_double();
         max_angular_velocity_ = get_parameter("max_angular_velocity").as_double();
+
+        // ------------------------------------ INITIALIZATION ------------------------------------------------
+
+        path_sub_ = create_subscription<nav_msgs::msg::Path>(
+            "/a_star/path", 10, std::bind(&PDMotionPlanner::pathCallback, this, std::placeholders::_1));
+        cmd_pub_ = create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
+        next_pose_pub_ = create_publisher<geometry_msgs::msg::PoseStamped>("/pd/next_pose", 10);
+
+        // ------------------------------- RETRIEVE CURRENT POSITION OF THE BUMPER ---------------------------
+        tf_buffer_ = std::make_shared<tf2_ros::Buffer>(this->get_clock());
+        RCLCPP_INFO(this->get_logger(), "tf buffer created");
+
+        tf_listener_ = std::make_shared<tf2_ros::TransformListener>(*tf_buffer_);
+        RCLCPP_INFO(this->get_logger(), "tf listener created");
         
     }
 }
