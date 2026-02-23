@@ -41,7 +41,7 @@ namespace bumperbot_motion {
         // run the control loop every 100ms.
     }
 
-    // ------------------------------------ FUNCTION DECLARATION -----------------------------------
+// ------------------------------------ FUNCTION DECLARATION -----------------------------------
     void PDMotionPlanner::pathCallback(const nav_msgs::msg::Path::SharedPtr path) {
         global_plan_ = *path;
     }
@@ -66,6 +66,13 @@ namespace bumperbot_motion {
         RCLCPP_INFO(get_logger(), "frame_id Robot Pose: %s", robot_pose.header.frame_id.c_str());
         RCLCPP_INFO(get_logger(), "frame_id Global Plan: %s", global_plan_.header.frame_id.c_str());
         
+    }
+
+    bool PDMotionPlanner::transformPlan(const std::string &frame) {
+        if (global_plan_.header.frame_id == frame) {
+            return true;
+        }
+        tf_buffer_->lookupTransform(frame, global_plan_.header.frame_id, tf2::TimePointZero);
     }
 
 }
