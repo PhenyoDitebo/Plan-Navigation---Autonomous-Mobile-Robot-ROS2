@@ -1,5 +1,6 @@
 #include "bumperbot_motion/pd_motion_planner.hpp"
 #include "geometry_msgs/msg/transform_stamped.hpp"
+#include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
 
 // ------------------------------------- CONSTRUCTOR -------------------------------------------
 namespace bumperbot_motion {
@@ -72,7 +73,20 @@ namespace bumperbot_motion {
         if (global_plan_.header.frame_id == frame) {
             return true;
         }
-        tf_buffer_->lookupTransform(frame, global_plan_.header.frame_id, tf2::TimePointZero);
+
+        geometry_msgs::msg::TransformStamped transform;
+
+        try {
+            transform = tf_buffer_->lookupTransform(frame, global_plan_.header.frame_id, tf2::TimePointZero);
+        }
+        catch(tf2::LookupException &ex) {
+            RCLCPP_ERROR_STREAM(get_logger(), "Couldn't transform plan from frame " << global_plan_.header.frame_id << " to " << frame);
+            return false;
+        }
+
+        for(auto &pose : global_plan_.poses) {
+            // turn geometry messages into TF2 objects
+        }
     }
 
 }
