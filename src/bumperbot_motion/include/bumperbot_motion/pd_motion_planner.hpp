@@ -39,6 +39,7 @@ namespace bumperbot_motion { // we use namespace to avoid "name collisions."
         // --------------------------------------- FUNCTIONS -----------------------------------------
         void controlLoop();
         void pathCallback(const nav_msgs::msg::Path::SharedPtr path);
+        bool transformPlan();
 
 
     };

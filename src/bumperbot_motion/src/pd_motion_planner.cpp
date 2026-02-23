@@ -65,7 +65,7 @@ namespace bumperbot_motion {
         // will use for velocity command. 
         RCLCPP_INFO(get_logger(), "frame_id Robot Pose: %s", robot_pose.header.frame_id.c_str());
         RCLCPP_INFO(get_logger(), "frame_id Global Plan: %s", global_plan_.header.frame_id.c_str());
-
+        
     }
 
 }
