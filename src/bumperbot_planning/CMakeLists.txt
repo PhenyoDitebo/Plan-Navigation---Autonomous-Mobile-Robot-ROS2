@@ -14,14 +14,18 @@ find_package(rclcpp_lifecycle REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 include_directories(include)
 
 add_executable(dijkstra_planner src/dijkstra_planner.cpp)
-ament_target_dependencies(dijkstra_planner rclcpp nav_msgs geometry_msgs tf2_ros)
+ament_target_dependencies(dijkstra_planner rclcpp nav_msgs geometry_msgs tf2_ros tf2_geometry_msgs)
 
 add_executable(a_star_planner src/a_star_planner.cpp)
-ament_target_dependencies(a_star_planner rclcpp nav_msgs geometry_msgs tf2_ros)
+ament_target_dependencies(a_star_planner rclcpp nav_msgs geometry_msgs tf2_ros tf2_geometry_msgs)
+
+add_executable(pd_motion_planner src/pd_motion_planner.cpp)
+ament_target_dependencies(pd_motion_planner rclcpp nav_msgs geometry_msgs tf2_ros tf2_geometry_msgs)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
@@ -36,6 +40,7 @@ install(
 install(TARGETS
   dijkstra_planner
   a_star_planner
+  pd_motion_planner
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -53,5 +58,5 @@ endif()
 
 
 ament_export_include_directories(include)
-ament_export_dependencies(rclcpp nav_msgs geometry_msgs tf2_ros)
+ament_export_dependencies(rclcpp nav_msgs geometry_msgs tf2_ros tf2_geometry_msgs)
 ament_package()
