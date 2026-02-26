@@ -61,15 +61,18 @@ namespace bumperbot_motion {
             return;
         }
 
-
-        // ------------------------- print the 2 frame ids for comparison -----------------------
-        // will use for velocity command. 
-        RCLCPP_INFO(get_logger(), "frame_id Robot Pose: %s", robot_pose.header.frame_id.c_str());
-        RCLCPP_INFO(get_logger(), "frame_id Global Plan: %s", global_plan_.header.frame_id.c_str());
+        if (!transformPlan(robot_pose.header.frame_id)) {
+            RCLCPP_ERROR(get_logger(), "Failed to transform Global Plan from '%s' to Robot Frame '%s'.");
+            return;
+        }
         
     }
 
+    // -------------------------------------------------------- PATH TRANSFORM ----------------------------------------------------------
+    // This will take a path (or a list of positions) and shift them all from their current reference frame (e.g. map), 
+    // to the new target frame (e.g. odom, base_link)
     bool PDMotionPlanner::transformPlan(const std::string &frame) {
+        // 1. Efficiency Check: If we are already in the target frame, do nothing.
         if (global_plan_.header.frame_id == frame) {
             return true;
         }
@@ -77,16 +80,26 @@ namespace bumperbot_motion {
         geometry_msgs::msg::TransformStamped transform;
 
         try {
+            // 2. Lookup the transform from the plan's current frame to the new target frame.
+            // tf2::TimePointZero fetches the latest available transform.
             transform = tf_buffer_->lookupTransform(frame, global_plan_.header.frame_id, tf2::TimePointZero);
         }
         catch(tf2::LookupException &ex) {
+            // 3. Handle cases where the coordinate frames aren't connected in the TF tree.
             RCLCPP_ERROR_STREAM(get_logger(), "Couldn't transform plan from frame " << global_plan_.header.frame_id << " to " << frame);
             return false;
         }
 
-        for(auto &pose : global_plan_.poses) {
+        // 4. Loop through every pose in the path and apply the transformation.
+        for(auto &pose : global_plan_.poses) { // this will update all the poses in the path
             // turn geometry messages into TF2 objects
+            // tf2::doTransform(input, output, transform_stamped)
+            // Here, we overwrite the existing pose with its transformed version.
+            tf2::doTransform(pose, pose, transform);
         }
+
+        global_plan_.header.frame_id = frame;
+        return true;
     }
 
 }
