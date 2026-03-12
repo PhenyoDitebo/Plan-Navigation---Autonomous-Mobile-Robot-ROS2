@@ -1,16 +1,16 @@
 # A* Path Planner for Bumperbot
 ### A ROS 2 Global Motion Planning Implementation
-**A high-performance C++ implementation of the A* search algorithm for autonomous grid-based navigation.**
+**A high-performance C++ implementation of the A-Star search algorithm for autonomous grid-based navigation.**
 
 ---
 
 ## 📖 Table of Contents
-* [Overview](#overview)
-* [Algorithm Implementation](#algorithm-implementation)
-* [System Architecture](#system-architecture)
-* [Coordinate Transformations](#coordinate-transformations)
-* [Technical Specifications](#technical-specifications)
-* [Installation & Usage](#installation--usage)
+* Overview
+* Algorithm Implementation
+* System Architecture
+* Coordinate Transformations
+* Technical Specifications
+* Installation & Usage
 
 ---
 
