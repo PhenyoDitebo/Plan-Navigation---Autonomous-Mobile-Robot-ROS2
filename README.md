@@ -97,7 +97,7 @@ Navigate to your Colcon workspace and build:
 ```bash
 colcon build --packages-select bumperbot_planning
 source install/setup.bash
-ros2 run bumperbot_planning a_star_node
+ros2 run bumperbot_planning a_star_planner
 ```
 ### Visualizing in RViz
 To see the planner in action, configure your RViz2 workspace with the following settings:
