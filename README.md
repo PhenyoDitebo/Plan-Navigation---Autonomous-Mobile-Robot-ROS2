@@ -39,7 +39,8 @@ Where:
 * **Collision Avoidance:** The planner strictly checks the `OccupancyGrid` data. Any cell with a value other than `0` (free space) is treated as an obstacle.
 * **Visited Map:** A secondary map is published to `/a_star/visited_map` using a custom intensity value (`-106`) to allow real-time visualization of the search frontier in RViz.
 
-Link to Video Display: https://drive.google.com/file/d/1evaSJr0eY4r8N9XaU2Tl7K1bUuXJjvgf/view?usp=sharing
+### Link to Video Display
+* https://drive.google.com/file/d/1evaSJr0eY4r8N9XaU2Tl7K1bUuXJjvgf/view?usp=sharing
 ---
 
 ## 🏗 System Architecture
