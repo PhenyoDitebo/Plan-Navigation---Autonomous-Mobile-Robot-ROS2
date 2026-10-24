@@ -1,5 +1,4 @@
 #include <queue>
-
 #include "bumperbot_planning/dijkstra_planner.hpp"
 #include "rmw/qos_profiles.h"
 #include "geometry_msgs/msg/transform_stamped.hpp"
@@ -75,8 +74,7 @@ namespace bumperbot_planning {
             std::vector<std::pair<int, int>> explore_directions = {
                 {-1,0}, {1,0}, {0,-1}, {0,1} // down, up, left, right.
             };
-
-            // remember, the dijkstra algo is basically a priority queue that uses weight/costs to see which node to visit next
+              // remember, the dijkstra algo is basically a priority queue that uses weight/costs to see which node to visit next
             std::priority_queue<GraphNode, std::vector<GraphNode>, std::greater<GraphNode>> pending_nodes; // will keep track of the nodes we are yet to visit. Will store in a vector of graph nodes. The greater part is for comparison.
             std::vector<GraphNode> visited_nodes; // used to store the list of the graph nodes that have already been visited by the algo to avoid double visits.  
 

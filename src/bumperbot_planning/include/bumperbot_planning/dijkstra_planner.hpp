@@ -59,12 +59,13 @@ namespace bumperbot_planning {
         nav_msgs::msg::OccupancyGrid::SharedPtr map_; // Shared pointer to the current static occupancy grid map used for planning decisions.
         nav_msgs::msg::OccupancyGrid visited_map_; // Local copy of the occupancy grid used to track and visualize visited cells during the algorithm search.
 
-        std::shared_ptr<tf2_ros::TransformListener> tf_listener_;
+        // retrieve current position of the robot
+        std::shared_ptr<tf2_ros::TransformListener> tf_listener_; 
         std::unique_ptr<tf2_ros::Buffer> tf_buffer_;
 
         // ---------- FUNCTIONS, Declaration ----------
         void mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map); // will be called when the map topic receives a message -- when it receives the map of the env
-        void goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose); // will be called whenever a message is recieved by the positiion subscriber. (??)
+        void goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose); // will be called whenever a message is published on pose_sub
 
         geometry_msgs::msg::Pose gridToWorld(const GraphNode &node);
 
