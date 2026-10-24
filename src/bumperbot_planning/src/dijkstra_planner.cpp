@@ -20,23 +20,29 @@ namespace bumperbot_planning {
 
         //Publishers
         path_pub_ = create_publisher<nav_msgs::msg::Path>("/dijkstra/path", 10);
-        map_pub_ = create_publisher<nav_msgs::msg::OccupancyGrid>("/dijkstra/visited_map", map_qos); // need to match the QoS durability policy with map_sub_
+        map_pub_ = create_publisher<nav_msgs::msg::OccupancyGrid>("/dijkstra/visited_map", map_qos); // Share cells the algo has visited. need to match the QoS durability policy with map_sub_
     }
 
+    // called whenever we receive a new occupancy grid / map
     void DijkstraPlanner::mapCallBack(const nav_msgs::msg::OccupancyGrid::SharedPtr map) { // used whenever we receive a new occupancy grid on the map topic
         map_ = map;
         visited_map_.header.frame_id = map->header.frame_id;
         visited_map_.info = map->info;
-        visited_map_.data = std::vector<int8_t>(visited_map_.info.height * visited_map_.info.width, -1);
+        visited_map_.data = std::vector<int8_t>(visited_map_.info.height * visited_map_.info.width, -1); // size of vector to be constructed
     }
+
+    // called whenever we wish to find the path. 
     void DijkstraPlanner::goalCallBack(const geometry_msgs::msg::PoseStamped::SharedPtr pose) { // excecuted whenever we recieve a new goal.
+        // case 0: no map, give error message
         if (!map_) {
             RCLCPP_ERROR(get_logger(), "No map received!");
             return;
         }
 
+        // case 1: Map exists, find path
         visited_map_.data = std::vector<int8_t>(visited_map_.info.height * visited_map_.info.width, -1); // clean up. So DJ doesn't look at nodes its already looked at to avoid looping forever -- wipe visited list from last run
         geometry_msgs::msg::TransformStamped map_to_base_tf;
+        
         try {
             map_to_base_tf = tf_buffer_->lookupTransform(map_->header.frame_id, "base_footprint", tf2::TimePointZero); // gives starting point of the DJ search, and maybe footprint of bot relative to that (??)
         }
