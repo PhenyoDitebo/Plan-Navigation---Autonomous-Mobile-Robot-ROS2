@@ -155,7 +155,7 @@ namespace bumperbot_planning {
 
         };
 
-        // is the position on the map? as in, does it exist in the grid, or is itt out of scope? This function will check that.
+        // is the position on the map? as in, does it exist in the grid, or is it out of scope? This function will check that.
          bool DijkstraPlanner::poseOnMap (const GraphNode &node) {
             return node.x >= 0 && node.x < static_cast<int>(map_->info.width) // is the node's x co-ordinate bigger than 0 and smaller than the width of the map?
                 && node.y >= 0 && node.y < static_cast<int>(map_->info.height); // is the node's y co-ordinate bigger than 0 and smaller than the height of the map?
