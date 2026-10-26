@@ -71,7 +71,7 @@ namespace bumperbot_planning {
 
     // ------------------------------------------------------ FUNCTIONS, DEFINED ----------------------------------------------------------------
 
-        // this is the CORE of our planner. It's what will implement the Dijkstra algorithm to calc the plan using the map using start pos and goal position
+        // this is the CORE of our planner. It's what will implement the algorithm to calc the plan using the map using start pos and goal position
         nav_msgs::msg::Path AStarPlanner::plan(const geometry_msgs::msg::Pose &start, const geometry_msgs::msg::Pose &goal) {
             // will use to indicate what it's node neighbors are to be added to priority queue. Each cell should have only 4 neighbours (+)
             std::vector<std::pair<int, int>> explore_directions = {

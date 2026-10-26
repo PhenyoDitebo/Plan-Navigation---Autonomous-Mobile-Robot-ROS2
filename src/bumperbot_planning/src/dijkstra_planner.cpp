@@ -42,7 +42,7 @@ namespace bumperbot_planning {
         // case 1: Map exists, find path
         visited_map_.data = std::vector<int8_t>(visited_map_.info.height * visited_map_.info.width, -1); // clean up. So DJ doesn't look at nodes its already looked at to avoid looping forever -- wipe visited list from last run
         geometry_msgs::msg::TransformStamped map_to_base_tf;
-        
+
         try {
             map_to_base_tf = tf_buffer_->lookupTransform(map_->header.frame_id, "base_footprint", tf2::TimePointZero); // gives starting point of the DJ search, and maybe footprint of bot relative to that (??)
         }
@@ -53,13 +53,13 @@ namespace bumperbot_planning {
 
         // ------------------------------------------------------- TYPE CONVERSION ---------------------------------------------------------------------
         // Takes the spatial data from the transform object and packs it into the Pose (position) object.
-        // We do this because the transform and position objects use different data structures. (??)
+        // We do this because the transform and position objects use different data structures.
         geometry_msgs::msg::Pose map_to_base_pose;
         map_to_base_pose.position.x = map_to_base_tf.transform.translation.x;
         map_to_base_pose.position.y = map_to_base_tf.transform.translation.y;
         map_to_base_pose.orientation = map_to_base_tf.transform.rotation;
 
-        auto path = plan(map_to_base_pose, pose->pose);
+        auto path = plan(map_to_base_pose, pose->pose); // (start position, goal position)
 
         if (!path.poses.empty()) {
             RCLCPP_INFO(get_logger(), "Shortest path found.");
@@ -80,7 +80,8 @@ namespace bumperbot_planning {
             std::vector<std::pair<int, int>> explore_directions = {
                 {-1,0}, {1,0}, {0,-1}, {0,1} // down, up, left, right.
             };
-              // remember, the dijkstra algo is basically a priority queue that uses weight/costs to see which node to visit next
+            
+            // remember, the dijkstra algo is basically a priority queue that uses weight/costs to see which node to visit next
             std::priority_queue<GraphNode, std::vector<GraphNode>, std::greater<GraphNode>> pending_nodes; // will keep track of the nodes we are yet to visit. Will store in a vector of graph nodes. The greater part is for comparison.
             std::vector<GraphNode> visited_nodes; // used to store the list of the graph nodes that have already been visited by the algo to avoid double visits.  
 
@@ -94,10 +95,11 @@ namespace bumperbot_planning {
                 active_node = pending_nodes.top(); // .top() is used for priroity queues over .front(): .top() always points to the node with the lowest weight/cost.
                 pending_nodes.pop();
 
+                // case 0: have we reached the goal node?
                 if (worldtoGrid(goal) == active_node) { // if the goal node is the active_node, we reached the goal.
                     break;
                 }
-                // else if that hasn't happened, explore directions (4, +) 
+                // case 1: else if that hasn't happened, explore directions (4, +) 
                 // "have we been here before?"
                 for (const auto &dir : explore_directions) {
                     GraphNode new_node = active_node + dir; // we are adding the co-ordinates

@@ -14,13 +14,13 @@ namespace bumperbot_planning {
     // used to respresent an abstruct nodes in the graph, their co-ordinates and properties
     struct GraphNode {
         // Properties
-        int x;
+        int x; // co-ordinates
         int y;
         int cost; // cost of travel to the next node.
-        std::shared_ptr<GraphNode>prev; // pointer to their parent node.
+        std::shared_ptr<GraphNode> prev; // pointer to their parent node.
 
         // constructor
-        GraphNode (int in_x, int in_y): x(in_x), y(in_y), cost(0) { // x and y co-ordinates and cost
+        GraphNode (int in_x, int in_y): x(in_x), y(in_y), cost(0) { // initisalise x and y co-ordinates and cost
 
         } 
 
@@ -28,7 +28,7 @@ namespace bumperbot_planning {
         GraphNode() :GraphNode(0,0) {}
 
 
-        // overloading the operators.
+        // overwriting & overloading the operators.
         bool operator>(const GraphNode &other) const { // "other" is the other node we are comparing to.
             return cost > other.cost;
         }
@@ -69,7 +69,7 @@ namespace bumperbot_planning {
 
         geometry_msgs::msg::Pose gridToWorld(const GraphNode &node);
 
-        GraphNode worldtoGrid(const geometry_msgs::msg::Pose &pose); // returns a graph node object whose co-ordinates respond to a position in the occupancy grid.
+        GraphNode worldtoGrid(const geometry_msgs::msg::Pose &pose); // returns a graph node object whose co-ordinates corespond to a position in the occupancy grid.
         bool poseOnMap (const GraphNode &node); // is position on Map? This function will be used to test that.
         unsigned int poseToCell(const GraphNode &node); // converts a 2D co-ordinate (e.g. Row 5, Col 10) into a single array (510)
 
